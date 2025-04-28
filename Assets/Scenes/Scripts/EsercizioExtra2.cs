@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class EsercizioExtra2 : MonoBehaviour
 {
-    private int[] Tabelline;
+    public int n;
     // Start is called before the first frame update
     void Start()
     {
-        Tabelline = new int[12 * 10];
-        for (int i = 0; i < 12; i++)
+        Debug.Log("Tabellina del " + n + " : ");
+        for (int i = 1; i <= 10; i++)
         {
-            for (int j = 0; j < 10; j++)
-            {
-                Tabelline[i * 10 + j] = (i + 1) * (j + 1);
-            }
+            Debug.Log(n + " x " + i + " = " + (n* i));
         }
-        StampaTabelline(0);
     }
 
     // Update is called once per frame
@@ -25,17 +21,4 @@ public class EsercizioExtra2 : MonoBehaviour
         
     }
 
-    void StampaTabelline(int index)
-    {
-        if (index >= Tabelline.Length)
-        {
-            return;
-        }
-
-        int tabellina = index / 10 + 1;
-        int moltiplicatore = index % 10 + 1;
-
-        Debug.Log(tabellina + " x " + moltiplicatore + " = " + Tabelline[index]);
-        StampaTabelline(index + 1);
-    }
 }
